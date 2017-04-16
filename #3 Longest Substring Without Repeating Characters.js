@@ -6,7 +6,7 @@ var lengthOfLongestSubstring = function(s) {
     let strSet = new Set();
     let rmvIdx = curIdx = longestStr = 0;
     while(curIdx < s.length) {
-		let l = s[curIdx];
+	let l = s[curIdx];
         if(!strSet.has(l)) {
           strSet.add(l);
           curIdx++;
