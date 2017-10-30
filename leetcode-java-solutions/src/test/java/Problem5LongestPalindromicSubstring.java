@@ -1,14 +1,21 @@
 import org.eclipse.collections.api.map.MutableMap;
 import org.eclipse.collections.impl.factory.Maps;
 import org.junit.Test;
-import static org.assertj.core.api.Assertions.*;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class Problem5LongestPalindromicSubstring {
     @Test
-    public void multiplicationOfZeroIntegersShouldReturnZero() {
+    public void longestPalindromeShouldReturnCorrectResult() {
         // Given
         MutableMap<String, String> testCases =
-                Maps.mutable.with("abbbbbc", "bbbbb", "aaaaaa", "aaaaaa", "asdabvbaaa", "abvba");
+                Maps.mutable.with(
+                        // case 1
+                        "abbbbbc", "bbbbb",
+                        // case 2
+                        "aaaaaa", "aaaaaa",
+                        // case 3
+                        "asdabvbaaa", "abvba");
         // Then
         testCases.forEachKeyValue((key, val) -> assertThat(longestPalindrome(key)).isEqualTo(val));
     }
@@ -31,6 +38,7 @@ public class Problem5LongestPalindromicSubstring {
             if (s.charAt(lower) != s.charAt(upper)) break;
         }
 
+        // lower + 1 because lower--
         return s.substring(lower + 1, upper);
     }
 }
