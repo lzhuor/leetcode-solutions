@@ -16,7 +16,9 @@ public class Problem6ZigZagConversion {
                 // case 1
                 Tuples.pair("PAYPALISHIRING", 3), "PAHNAPLSIIGYIR",
                 // case 2
-                Tuples.pair("PAYPALISHIRING", 4), "PINALSIGYAHRPI"
+                Tuples.pair("PAYPALISHIRING", 4), "PINALSIGYAHRPI",
+                // case 3
+                Tuples.pair("AB", 1), "AB"
         );
 
         testCases.forEachKeyValue((pair, result) -> assertThat(convert(pair.getOne(), pair.getTwo())).isEqualTo(result));
@@ -57,9 +59,7 @@ public class Problem6ZigZagConversion {
 
         StringBuilder sb = new StringBuilder(s.length());
 
-        for (List<String> r : list) {
-            r.forEach(sb::append);
-        }
+        list.forEach(each -> each.forEach(sb::append));
 
         return sb.toString();
     }
