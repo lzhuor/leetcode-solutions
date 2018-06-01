@@ -1,5 +1,4 @@
-
-class Solution {
+class Problem204CountPrime {
     public int countPrimes(int n) {
         int counter = 0;
         
@@ -10,7 +9,7 @@ class Solution {
         return counter;
     }
     
-    public boolean isPrime(int n) {        
+    private boolean isPrime(int n) {
         if (n == 2) {
             return true;
         }
