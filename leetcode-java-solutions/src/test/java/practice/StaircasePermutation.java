@@ -20,8 +20,6 @@ public class StaircasePermutation {
     }
 
     private int hop(int stairs) {
-//        if (stairs == 1) return 1;
-
         int numOfWays = 0;
 
         if (stairs - 1 >= 0) {
