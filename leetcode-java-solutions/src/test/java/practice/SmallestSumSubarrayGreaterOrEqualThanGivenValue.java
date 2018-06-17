@@ -25,7 +25,7 @@ public class SmallestSumSubarrayGreaterOrEqualThanGivenValue {
 
             while (currentSum >= target && leftIdx <= rightIdx) {
                 int delta = rightIdx - leftIdx;
-                minLength = delta < minLength ? delta : minLength;
+                minLength = Math.min(delta, minLength);
                 currentSum -= array[leftIdx++];
             }
         }

@@ -14,8 +14,7 @@ public class PrimeFactorization {
 
     private void findPrime(int num) {
 
-        if (num % 2 == 0 && num / 2 == 1) {
-            System.out.print(2 + " ");
+        if (num == 1) {
             return;
         }
 

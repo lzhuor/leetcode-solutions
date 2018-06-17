@@ -14,7 +14,6 @@ import static org.junit.Assert.assertEquals;
 public class Google {
     @Test
     public void test() {
-//        assertEquals("11:00", solution("12:34"));
         assertEquals("11:00", solution("11:01"));
         assertEquals("11:55", solution("11:59"));
         assertEquals("11:11", solution("11:13"));
@@ -87,7 +86,7 @@ public class Google {
 
     }
 
-    public boolean isValidTime(String time) {
+    private boolean isValidTime(String time) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
         dateFormat.setLenient(false);
         try {
@@ -98,7 +97,7 @@ public class Google {
         }
     }
 
-    public Date parseDate(String time) {
+    private Date parseDate(String time) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
         dateFormat.setLenient(false);
         try {

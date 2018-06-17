@@ -16,21 +16,21 @@ public class SecondSmallestNumberInArray {
     }
 
     private Integer findSecondSmallest(int[] list) {
-        int firstLargest = Integer.MAX_VALUE;
-        int secondLargest = Integer.MAX_VALUE;
+        int firstSmallest = Integer.MAX_VALUE;
+        int secondSmallest = Integer.MAX_VALUE;
 
         for (int num: list) {
-            if (num == firstLargest) continue;
-            if (num < firstLargest) {
-                secondLargest = firstLargest;
-                firstLargest = num;
+            if (num == firstSmallest) continue;
+            if (num < firstSmallest) {
+                secondSmallest = firstSmallest;
+                firstSmallest = num;
             } else {
-                if (num < secondLargest) {
-                    secondLargest = num;
+                if (num < secondSmallest) {
+                    secondSmallest = num;
                 }
             }
         }
 
-        return secondLargest;
+        return secondSmallest;
     }
 }

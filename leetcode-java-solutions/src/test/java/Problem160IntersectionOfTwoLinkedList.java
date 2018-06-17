@@ -10,6 +10,10 @@
  * }
  */
 public class Problem160IntersectionOfTwoLinkedList {
+    class ListNode {
+        ListNode next;
+    }
+
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         int aLength = 0;
         int bLength = 0;

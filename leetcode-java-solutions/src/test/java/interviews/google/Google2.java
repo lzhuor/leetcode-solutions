@@ -9,12 +9,12 @@ import static org.junit.Assert.assertEquals;
 public class Google2 {
     @Test
     public void test() {
-//        assertEquals(-1, solution(new int[]{1, 4, 3, 2, 5}, 1, 3));
+        assertEquals(-1, solution(new int[]{1, 4, 3, 2, 5}, 1, 3));
         assertEquals(6, solution(new int[]{1, 2, 7, 6, 4, 3, 5}, 2, 2));
-//        assertEquals(3, solution(new int[]{1, 4, 3, 2, 5}, 1, 2));
+        assertEquals(3, solution(new int[]{1, 4, 3, 2, 5}, 1, 2));
     }
 
-    public int solution(int[] A, int K, int M) {
+    private int solution(int[] A, int K, int M) {
         int totalBloom = Integer.MIN_VALUE;
         int day = 1;
         String[] filled = new String[A.length];
@@ -34,7 +34,7 @@ public class Google2 {
         return totalBloom;
     }
 
-    public int getLongGroups(String[] result, int K) {
+    private int getLongGroups(String[] result, int K) {
         String s = String.join("", result);
         String[] groups = s.split("n");
 
