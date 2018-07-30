@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 public class Problem122BestTimeToBuySellStockMultipleTimes {
     @Test
     public void test() {
-        // This is when you can buy and sell at most once
         assertEquals(7, maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
         assertEquals(4, maxProfit(new int[]{1, 2, 3, 4, 5}));
         assertEquals(0, maxProfit(new int[]{7, 6, 4, 3, 1}));

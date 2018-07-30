@@ -1,27 +1,36 @@
-import org.eclipse.collections.api.map.MutableMap;
-import org.eclipse.collections.impl.factory.Maps;
 import org.junit.Test;
 
-import java.util.HashMap;
+import static org.junit.Assert.assertEquals;
 
 public class Problem7ReverseInteger {
     @Test
     public void test() {
-        MutableMap<Integer, Integer> testCases = Maps.mutable.with(
-                // case 1
-                100, 1,
-                // case 2
-                123, 321,
-                // case 3
-                -123, -321,
-                // case 4
-                120, 21
-        );
+        assertEquals(1, reverseInteger(10));
+        assertEquals(321, reverseInteger(123));
+        assertEquals(-123, reverseInteger(-321));
+        // overflow should return 0
+        assertEquals(0, reverseInteger(Integer.MAX_VALUE));
     }
 
-    public int reverInteger(int number) {
-        HashMap<String, String> map = new HashMap<>();
+    private int reverseInteger(Integer number) {
+        if (number.toString().length() == 1) return number;
+        char[] numCharArr = number.toString().toCharArray();
+        StringBuilder sb = new StringBuilder();
+        boolean isPaddingZero = true;
+        for (int i = numCharArr.length - 1; i >= 0; i--) {
+            char c = numCharArr[i];
+            if(c == 0 && isPaddingZero) continue;
+            if(c != 0 && !String.valueOf(c).equals("-")) {
+                isPaddingZero = false;
+                sb.append(String.valueOf(c));
+            }
+        }
 
-        return 0;
+        try {
+            int reversed = Integer.parseInt(sb.toString());
+            return number >= 0 ? reversed : reversed * -1;
+        } catch (NumberFormatException nfe) {
+            return 0;
+        }
     }
 }

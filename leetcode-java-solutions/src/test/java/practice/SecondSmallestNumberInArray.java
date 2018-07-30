@@ -24,10 +24,8 @@ public class SecondSmallestNumberInArray {
             if (num < firstSmallest) {
                 secondSmallest = firstSmallest;
                 firstSmallest = num;
-            } else {
-                if (num < secondSmallest) {
-                    secondSmallest = num;
-                }
+            } else if (num < secondSmallest) {
+                secondSmallest = num;
             }
         }
 
