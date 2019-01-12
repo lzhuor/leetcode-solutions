@@ -24,4 +24,4 @@ const visit = (root, res, level) => {
     
     visit(root.right, res, level + 1);
     visit(root.left, res, level + 1);
-}
+};

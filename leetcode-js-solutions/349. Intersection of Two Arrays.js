@@ -4,7 +4,7 @@
  * @return {number[]}
  */
 var intersection = function(nums1, nums2) {
-    const dict = {}
+    const dict = {};
     const resultSet = new Set();
     
     nums1.forEach(each => dict[each] = true);
